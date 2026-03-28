@@ -1,5 +1,6 @@
 package com.portsang.portfolio.domain.repository
 
+import com.portsang.portfolio.domain.entity.Skill
 import com.portsang.portfolio.domain.entity.ProjectSkill
 import org.springframework.data.jpa.repository.JpaRepository
 
