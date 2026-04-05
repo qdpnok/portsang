@@ -8,5 +8,5 @@ import org.springframework.boot.runApplication
 class PortfolioApplication
 
 fun main(args: Array<String>) {
-	runApplication<PortfolioApplication>(*args)
+    runApplication<PortfolioApplication>(*args)
 }

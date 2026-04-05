@@ -3,7 +3,6 @@ package com.portsang.portfolio.presentation.dto
 import com.portsang.portfolio.domain.entity.Achievement
 import com.portsang.portfolio.domain.entity.Experience
 import com.portsang.portfolio.domain.entity.Skill
-import org.springframework.format.annotation.DateTimeFormat
 import java.time.format.DateTimeFormatter
 
 class ResumeDTO(

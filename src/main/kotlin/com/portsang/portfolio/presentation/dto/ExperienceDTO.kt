@@ -1,6 +1,6 @@
 package com.portsang.portfolio.presentation.dto
 
-data class ExperienceDTO (
+data class ExperienceDTO(
     val title: String,
     val description: String,
     val startYearMonth: String,
