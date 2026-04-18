@@ -1,0 +1,18 @@
+package com.portsang.portfolio.admin.context.skill.service
+
+import com.portsang.portfolio.admin.data.TableDTO
+import com.portsang.portfolio.domain.entity.Skill
+import com.portsang.portfolio.domain.repository.SkillRepository
+import org.springframework.stereotype.Service
+
+@Service
+class AdminSkillService(
+    private val skillRepository: SkillRepository
+) {
+    fun getSkillTable(): TableDTO {
+        val classInfo = Skill::class
+        val entities = skillRepository.findAll()
+
+        return TableDTO.form(classInfo, entities)
+    }
+}

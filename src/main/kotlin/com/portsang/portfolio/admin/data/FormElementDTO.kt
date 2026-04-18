@@ -6,17 +6,17 @@ abstract class FormElementDTO(
     val type: String
 )
 
-class TextFromElementDTO(
+class TextFormElementDTO(
     name: String,
     size: Int
 ) : FormElementDTO(name = name, size = size, type = "text")
 
-class DateFromElementDTO(
+class DateFormElementDTO(
     name: String,
     size: Int
 ) : FormElementDTO(name = name, size = size, type = "data")
 
-class SelectFromElementDTO(
+class SelectFormElementDTO(
     name: String,
     size: Int,
     options: List<Any>
