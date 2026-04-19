@@ -20,7 +20,7 @@ data class AchievementForm(
 
     val isActive: Boolean,
 ) {
-    fun toEntity(): Achievement{
+    fun toEntity(): Achievement {
         return Achievement(
             title = this.title,
             description = this.description,

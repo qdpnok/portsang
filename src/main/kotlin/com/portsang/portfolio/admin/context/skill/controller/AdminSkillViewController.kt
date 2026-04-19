@@ -1,6 +1,5 @@
 package com.portsang.portfolio.admin.context.skill.controller
 
-import com.portsang.portfolio.admin.context.link.service.AdminLinkService
 import com.portsang.portfolio.admin.context.skill.service.AdminSkillService
 import com.portsang.portfolio.admin.data.FormElementDTO
 import com.portsang.portfolio.admin.data.SelectFormElementDTO

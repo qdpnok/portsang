@@ -20,7 +20,7 @@ class AdminProjectService(
         return TableDTO.form(classInfo, entities, "details", "skills")
     }
 
-    fun getProjectDetailTable(id:Long?) : TableDTO{
+    fun getProjectDetailTable(id: Long?): TableDTO {
         val classInfo = ProjectDetail::class
         val entities = if (id != null) projectRepository.findById(id)
             .orElseThrow { throw AdminBadRequestException("ID ${id}에 해당하는 데이터를 찾을 수가 없습니다.") }
@@ -61,7 +61,7 @@ class AdminProjectService(
         val detailMap = project.details.map { it.id to it }.toMap()
         form.details?.forEach {
             val entity = detailMap.get(it.id)
-            if(entity != null) {
+            if (entity != null) {
                 entity.update(
                     content = it.content,
                     url = it.url,

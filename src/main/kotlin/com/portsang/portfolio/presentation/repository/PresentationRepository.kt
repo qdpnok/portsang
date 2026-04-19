@@ -1,17 +1,7 @@
 package com.portsang.portfolio.presentation.repository
 
-import com.portsang.portfolio.domain.entity.Achievement
-import com.portsang.portfolio.domain.entity.Experience
-import com.portsang.portfolio.domain.entity.Introduction
-import com.portsang.portfolio.domain.entity.Link
-import com.portsang.portfolio.domain.entity.Project
-import com.portsang.portfolio.domain.entity.Skill
-import com.portsang.portfolio.domain.repository.AchievementRepository
-import com.portsang.portfolio.domain.repository.ExperienceRepository
-import com.portsang.portfolio.domain.repository.IntroductionRepository
-import com.portsang.portfolio.domain.repository.LinkRepository
-import com.portsang.portfolio.domain.repository.ProjectRepository
-import com.portsang.portfolio.domain.repository.SkillRepository
+import com.portsang.portfolio.domain.entity.*
+import com.portsang.portfolio.domain.repository.*
 import org.springframework.stereotype.Repository
 
 @Repository

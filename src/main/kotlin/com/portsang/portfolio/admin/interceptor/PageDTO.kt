@@ -1,6 +1,6 @@
 package com.portsang.portfolio.admin.interceptor
 
-data class PageDTO (
+data class PageDTO(
     val name: String,
     val url: String
 )

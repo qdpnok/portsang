@@ -9,7 +9,7 @@ class TableDTO(
     val records: List<List<String>>
 ) {
     companion object {
-        fun<T : Any> form(classInfo: KClass<T>, entities: List<Any>, vararg filterings: String): TableDTO {
+        fun <T : Any> form(classInfo: KClass<T>, entities: List<Any>, vararg filterings: String): TableDTO {
             // ["a", "b"]
             // "a", "b"
             val name = classInfo.simpleName ?: "Unknown"
@@ -27,7 +27,7 @@ class TableDTO(
             return TableDTO(name = name, columns = columns, records = records)
         }
 
-        private fun<T: Any> createColumns(classInfo: KClass<T>, vararg filterings: String): MutableList<String> {
+        private fun <T : Any> createColumns(classInfo: KClass<T>, vararg filterings: String): MutableList<String> {
             val mainColumns = classInfo.java.declaredFields
                 .filter { !filterings.contains(it.name) }
                 .map { it.name }

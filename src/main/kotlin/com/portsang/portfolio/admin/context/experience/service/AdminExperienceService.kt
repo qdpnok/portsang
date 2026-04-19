@@ -20,7 +20,7 @@ class AdminExperienceService(
         return TableDTO.form(classInfo, entities, "details")
     }
 
-    fun getExperienceDetailTable(id:Long?) : TableDTO{
+    fun getExperienceDetailTable(id: Long?): TableDTO {
         val classInfo = ExperienceDetail::class
         val entities = if (id != null) experienceRepository.findById(id)
             .orElseThrow { throw AdminBadRequestException("ID ${id}에 해당하는 데이터를 찾을 수가 없습니다.") }
@@ -60,7 +60,7 @@ class AdminExperienceService(
         val detailMap = experience.details.map { it.id to it }.toMap()
         form.details?.forEach {
             val entity = detailMap.get(it.id)
-            if(entity != null) {
+            if (entity != null) {
                 entity.update(
                     content = it.content,
                     isActive = it.isActive

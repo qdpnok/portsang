@@ -28,7 +28,7 @@ class PresentationService(
     }
 
     @Transactional(readOnly = true)
-    fun getResume() : ResumeDTO {
+    fun getResume(): ResumeDTO {
         val experiences = presentationRepository.getActivateExperiences()
         val achievements = presentationRepository.getActivateAchievements()
         val skills = presentationRepository.getActivateSkills()
@@ -44,7 +44,7 @@ class PresentationService(
     fun getProjects(): List<ProjectDTO> {
         val projects = presentationRepository.getActivateProjects()
 
-        return projects.map{ ProjectDTO(it) }
+        return projects.map { ProjectDTO(it) }
     }
 
 }

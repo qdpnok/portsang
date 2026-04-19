@@ -46,7 +46,7 @@ class AdminProjectViewController(
             Pair("editable", true),
             Pair("deletable", false),
             Pair("hasDetails", true),
-            )
+        )
         model.addAllAttributes(pageAttributes)
 
         return "admin/page-table"

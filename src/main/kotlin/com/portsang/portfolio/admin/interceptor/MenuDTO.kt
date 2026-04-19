@@ -1,6 +1,6 @@
 package com.portsang.portfolio.admin.interceptor
 
-data class MenuDTO (
+data class MenuDTO(
     val name: String,
     val pages: List<PageDTO>
 )

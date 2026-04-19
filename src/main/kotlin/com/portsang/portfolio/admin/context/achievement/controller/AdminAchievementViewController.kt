@@ -37,7 +37,7 @@ class AdminAchievementViewController(
             Pair("deletable", false),
             Pair("hasDetails", false),
 
-        )
+            )
         model.addAllAttributes(pageAttributes)
 
         return "admin/page-table"

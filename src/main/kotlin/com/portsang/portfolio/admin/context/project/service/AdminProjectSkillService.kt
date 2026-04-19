@@ -2,7 +2,6 @@ package com.portsang.portfolio.admin.context.project.service
 
 import com.portsang.portfolio.admin.data.TableDTO
 import com.portsang.portfolio.domain.repository.ProjectRepository
-import com.portsang.portfolio.domain.repository.ProjectSkillRepository
 import com.portsang.portfolio.domain.repository.SkillRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
@@ -24,7 +23,7 @@ class AdminProjectSkillService(
 
         val records = mutableListOf<MutableList<String>>()
         for (project in projects) {
-            project.skills.forEach{
+            project.skills.forEach {
                 val record = mutableListOf<String>()
                 record.add(it.id.toString())
                 record.add(it.project.id.toString())
@@ -41,7 +40,7 @@ class AdminProjectSkillService(
     }
 
     fun getProjectList(): List<String> {
-        val projects= projectRepository.findAll()
+        val projects = projectRepository.findAll()
 
         return projects.map { "${it.id} (${it.name})" }.toList()
     }

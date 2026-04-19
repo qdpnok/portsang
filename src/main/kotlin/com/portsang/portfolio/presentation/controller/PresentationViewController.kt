@@ -17,7 +17,7 @@ class PresentationViewController(
     }
 
     @GetMapping("/")
-    fun index(model: Model): String{
+    fun index(model: Model): String {
 
         val introductions = presentationService.getIntroductions()
         model.addAttribute("introductions", introductions)

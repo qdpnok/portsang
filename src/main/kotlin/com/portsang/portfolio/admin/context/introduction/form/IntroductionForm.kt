@@ -1,9 +1,7 @@
 package com.portsang.portfolio.admin.context.introduction.form
 
-import com.portsang.portfolio.domain.entity.Achievement
 import com.portsang.portfolio.domain.entity.Introduction
 import jakarta.validation.constraints.NotBlank
-import java.time.LocalDate
 
 data class IntroductionForm(
 
