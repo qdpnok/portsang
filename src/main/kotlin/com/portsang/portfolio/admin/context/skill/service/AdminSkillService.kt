@@ -1,9 +1,11 @@
 package com.portsang.portfolio.admin.context.skill.service
 
+import com.portsang.portfolio.admin.context.skill.form.SkillForm
 import com.portsang.portfolio.admin.data.TableDTO
 import com.portsang.portfolio.domain.entity.Skill
 import com.portsang.portfolio.domain.repository.SkillRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AdminSkillService(
@@ -14,5 +16,17 @@ class AdminSkillService(
         val entities = skillRepository.findAll()
 
         return TableDTO.form(classInfo, entities)
+    }
+
+    @Transactional
+    fun save(form: SkillForm) {
+        val skill = form.toEntity()
+        skillRepository.save(skill)
+    }
+
+    @Transactional
+    fun update(id: Long, form: SkillForm) {
+        val skill = form.toEntity(id)
+        skillRepository.save(skill)
     }
 }
