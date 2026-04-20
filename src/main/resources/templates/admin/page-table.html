@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{::#content})}">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{::main})}">
+<body>
+  <main id="main" class="main">
 
-    <div id="content">
+    <div th:replace="~{admin/fragments/fragment-page-title :: pageTitle}"></div>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+    <div th:replace="~{admin/fragments/fragment-form :: form(${formElements})}"></div>
 
-            <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800" th:text="${pageName}">Tables</h1>
-            <p class="mb-4"></p>
+    <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${table})}"></div>
+    <th:block th:if="${hasDetails}">
+      <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${detailTable})}"></div>
+    </th:block>
 
-            <!-- Form Card -->
-            <div th:replace="~{admin/fragments/fragment-form :: form(${formElements})}"></div>
+    <div th:replace="~{admin/fragments/fragment-modal-form :: modalForm(${formElements})}"></div>
 
-            <!-- DataTales Card -->
-            <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${table})}"></div>
-            <th:block th:if="${hasDetails}">
-                <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${detailTable})}"></div>
-            </th:block>
-
-            <div th:replace="~{admin/fragments/fragment-modal-form :: modalForm(${formElements})}"></div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-    </div>
-
+  </main><!-- End #main -->
+</body>
 </html>

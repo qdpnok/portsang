@@ -15,7 +15,7 @@ class AdminLinkService(
         val classInfo = Link::class
         val entities = linkRepository.findAll()
 
-        return TableDTO.form(classInfo, entities)
+        return TableDTO.from(classInfo, entities)
     }
 
     @Transactional

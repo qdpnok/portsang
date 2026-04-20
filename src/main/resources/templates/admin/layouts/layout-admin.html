@@ -1,50 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
 
 <div th:replace="~{admin/fragments/fragment-head :: head}"></div>
 
-<body id="page-top">
+<body>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+<!-- ======= Header ======= -->
+<div th:replace="~{admin/fragments/fragment-header :: header}"></div>
 
-  <!-- Sidebar -->
-  <div th:replace="~{admin/fragments/fragment-sidebar :: sidebar}"></div>
-  <!-- End of Sidebar -->
+<!-- ======= Sidebar ======= -->
+<div th:replace="~{admin/fragments/fragment-sidebar :: sidebar}"></div>
 
-  <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column">
+<main th:replace="${content}">
+<p>Contents</p>
+</main>
 
-    <!-- Topbar -->
-    <div th:replace="~{admin/fragments/fragment-topbar :: topbar}"></div>
-    <!-- End of Topbar -->
+<!-- ======= Footer ======= -->
+<div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
 
-    <!-- Main Content -->
-    <div th:replace="${content}">
-      <p>Contents</p>
-    </div>
-    <!-- End of Main Content -->
+<div th:replace="~{admin/fragments/fragment-foot :: foot}"></div>
 
-    <!-- Footer -->
-    <div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
-    <!-- End of Footer -->
-
-  </div>
-  <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div th:replace="~{admin/fragments/fragment-modal-logout :: modalLogout}"></div>
-
-<div th:replace="~{admin/fragments/fragment-scripts :: scripts}"></div>
+<div th:replace="~{admin/fragments/fragment-script-util :: util}"></div>
 
 </body>
-
 </html>

@@ -17,7 +17,7 @@ class AdminProjectService(
         val classInfo = Project::class
         val entities = projectRepository.findAll()
 
-        return TableDTO.form(classInfo, entities, "details", "skills")
+        return TableDTO.from(classInfo, entities, "details", "skills")
     }
 
     fun getProjectDetailTable(id: Long?): TableDTO {
@@ -26,7 +26,7 @@ class AdminProjectService(
             .orElseThrow { throw AdminBadRequestException("ID ${id}에 해당하는 데이터를 찾을 수가 없습니다.") }
             .details else emptyList()
 
-        return TableDTO.form(classInfo, entities)
+        return TableDTO.from(classInfo, entities)
     }
 
 

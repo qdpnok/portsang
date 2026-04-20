@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div class="col-xl-3 col-md-6 mb-4" th:fragment="visitorCard(visitor)">
-  <div class="card border-left-primary shadow h-100 py-2">
+<body>
+<!-- Sales Card -->
+<div class="col-xxl-4 col-md-6" th:fragment="visitorCard(visitor)">
+  <div class="card info-card sales-card">
     <div class="card-body">
-      <div class="row no-gutters align-items-center">
-        <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" th:text="${visitor.name}" >
-            Earnings (Monthly)</div>
-          <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${visitor.count}">$40,000</div>
+      <h5 class="card-title">Visitors | <span th:text="${visitor.name}">Today</span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+        th:style="|color: ${visitor.color}; background: ${visitor.background};|">
+          <i class="bi bi-people"></i>
         </div>
-        <div class="col-auto">
-          <i class="fas fa-calendar fa-2x text-gray-300" th:class="|fas fa-users fa-2x text-gray-300|"></i>
+        <div class="ps-3">
+          <h6 th:text="${visitor.count}">145</h6>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div><!-- End Sales Card -->
+</body>
 </html>

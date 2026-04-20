@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div class="modal fade" id="logoutModal" tabindex="-1" th:fragment="modalForm(formElements)" th:with="pageId=${#strings.toLowerCase(pageName)}" th:id="|${pageId}-modal|">
-    <div class="modal-dialog" th:classappend="modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" th:text="|Edit ${pageName}|">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal">
-                    <span>×</span>
-                </button>
+<body>
+<div class="modal fade" id="ExtralargeModal" tabindex="-1"
+     th:fragment="modalForm(formElements)" th:id="|${pageName}Modal|">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" th:text="|Edit ${pageName}|">Extra Large Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Floating Labels Form -->
+        <form class="row g-3" th:id="|${#strings.toLowerCase(pageName)}ModalForm|" onsubmit="return false;">
+
+          <div th:class="|col-md-2 ${pageName}ModalFormElement|">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="id" placeholder="id" name="id" readonly>
+              <label for="id">id</label>
             </div>
-            <div class="modal-body">
-                <form class="user" th:id="|${pageId}-modal-form|" th:onsubmit="'return false;'">
-                    <div class="row" th:classappend="main">
+          </div>
 
-                        <div class="form-group col-md-12" th:class="|form-group col-md-2 ${pageId}-form-element|">
-                            <label for="exampleInputText" class="d-inline" th:for="id" th:text="id">Text</label>
-                            <input type="text" class="form-control d-inline" id="exampleInputText" th:type="text" th:id="id" th:name="id" readonly>
-                        </div>
+          <div class="col-md-12" th:each="formElement : ${formElements}"
+               th:class="|col-md-${formElement.size} ${pageName}ModalFormElement|">
+            <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${formElement})}"></div>
+          </div>
 
-                        <th:block th:each="formElement : ${formElements}">
-                            <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${formElement})}"></div>
-                        </th:block>
-
-                    </div>
-
-                    <th:block th:if="${detailFormElements != null} and ${#lists.size(detailFormElements) > 0}">
-
-                        <hr>
-
-                        <div class="row">
-                            <button type="button" class="btn btn-outline-primary justify-content-center mx-auto my-1" onclick="addDetailRow('modal-form')">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-
-                        <div class="row" th:classappend="detail">
-
-                            <div class="form-group col-md-12" th:class="|form-group col-md-2 ${pageId}-form-element|">
-                                <label for="exampleInputText" class="d-inline" th:for="id" th:text="id">Text</label>
-                                <input type="text" class="form-control d-inline" id="exampleInputTextDetail" th:type="text" th:id="id" th:name="id" readonly>
-                            </div>
-
-                            <th:block th:each="detailFormElement : ${detailFormElements}">
-                                <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${detailFormElement})}"></div>
-                            </th:block>
-
-                        </div>
-                    </th:block>
-
-                </form>
+          <th:block th:if="${detailFormElements != null} and ${#lists.size(detailFormElements) > 0}">
+            <hr>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline-primary" onclick="addDetail('modalDetail')">
+                <i class="bi bi-plus me-1"></i>
+              </button>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" th:text="취소">Cancel</button>
-                <button class="btn btn-primary" th:onclick="completeEdit()" th:text="수정">Logout</button>
+            <div class="row modalDetail mt-3">
+              <div th:class="|col-md-2 ${pageName}ModalDetailFormElement|">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="id" placeholder="id" name="id" readonly>
+                  <label for="id">id</label>
+                </div>
+              </div>
+              <div class="col-md-12" th:each="detailFormElement : ${detailFormElements}"
+                   th:class="|col-md-${detailFormElement.size} ${pageName}ModalDetailFormElement|">
+                <div th:replace="~{admin/fragments/fragment-form-element :: formElement(${detailFormElement})}"></div>
+              </div>
             </div>
-        </div>
+          </th:block>
+        </form><!-- End floating Labels Form -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="닫기">Close</button>
+        <button type="button" class="btn btn-primary" th:text="수정" th:onclick="completeEdit()">Save changes</button>
+      </div>
     </div>
-</div>
+  </div>
+</div><!-- End Extra Large Modal-->
+</body>
 </html>

@@ -9,7 +9,7 @@ class TableDTO(
     val records: List<List<String>>
 ) {
     companion object {
-        fun <T : Any> form(classInfo: KClass<T>, entities: List<Any>, vararg filterings: String): TableDTO {
+        fun <T : Any> from(classInfo: KClass<T>, entities: List<Any>, vararg filterings: String): TableDTO {
             // ["a", "b"]
             // "a", "b"
             val name = classInfo.simpleName ?: "Unknown"

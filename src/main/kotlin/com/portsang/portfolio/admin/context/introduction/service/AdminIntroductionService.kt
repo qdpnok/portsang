@@ -15,7 +15,7 @@ class AdminIntroductionService(
         val classInfo = Introduction::class
         val entities = introductionRepository.findAll()
 
-        return TableDTO.form(classInfo, entities)
+        return TableDTO.from(classInfo, entities)
     }
 
     @Transactional

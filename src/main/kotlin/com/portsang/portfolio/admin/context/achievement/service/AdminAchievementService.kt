@@ -15,7 +15,7 @@ class AdminAchievementService(
         val classInfo = Achievement::class
         val entities = achievementRepository.findAll()
 
-        return TableDTO.form(classInfo, entities)
+        return TableDTO.from(classInfo, entities)
     }
 
     @Transactional

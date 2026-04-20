@@ -15,7 +15,7 @@ class AdminSkillService(
         val classInfo = Skill::class
         val entities = skillRepository.findAll()
 
-        return TableDTO.form(classInfo, entities)
+        return TableDTO.from(classInfo, entities)
     }
 
     @Transactional
