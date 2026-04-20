@@ -17,7 +17,8 @@ class DataInitializer(
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
     private val projectRepository: ProjectRepository,
-    private val skillRepository: SkillRepository
+    private val skillRepository: SkillRepository,
+    private val accountRepository: AccountRepository
 ) {
 
     val log = LoggerFactory.getLogger(DataInitializer::class.java)
@@ -203,5 +204,12 @@ class DataInitializer(
             )
         )
         projectRepository.saveAll(mutableListOf(project1, project2))
+
+        val account = Account(
+            loginId = "qdpnok",
+            pw = "\$2a\$10\$jijCnpFcJOorJOqOUzj2TupmdJmiEStBNQ07r3wtW7d1NDInBOPzu"
+        )
+
+        accountRepository.save(account)
     }
 }

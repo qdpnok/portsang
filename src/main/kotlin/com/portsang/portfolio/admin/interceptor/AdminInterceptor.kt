@@ -20,7 +20,7 @@ class AdminInterceptor : HandlerInterceptor {
                 name = "Index",
                 pages = listOf<PageDTO>(
                     PageDTO(name = "Introduction", url = "/admin/introduction"),
-                    PageDTO(name = "Link", url = "admin/link")
+                    PageDTO(name = "Link", url = "/admin/link")
                 )
             ),
             MenuDTO(
@@ -28,14 +28,14 @@ class AdminInterceptor : HandlerInterceptor {
                 pages = listOf<PageDTO>(
                     PageDTO(name = "Experience", url = "/admin/experience"),
                     PageDTO(name = "Achievement", url = "admin/achievement"),
-                    PageDTO(name = "Skill", url = "admin/skill"),
+                    PageDTO(name = "Skill", url = "/admin/skill"),
                 )
             ),
             MenuDTO(
                 name = "Index",
                 pages = listOf<PageDTO>(
                     PageDTO(name = "Project", url = "/admin/project"),
-                    PageDTO(name = "ProjectSkill", url = "admin/project/skill")
+                    PageDTO(name = "ProjectSkill", url = "/admin/project/skill")
                 )
             ),
         )
