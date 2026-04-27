@@ -12,7 +12,7 @@ spring:
         format_sql: false
         default_batch_fetch_size: 10
   datasource:
-    url: jdbc:mysql://mysql:3307/portfolio
+    url: jdbc:mysql://mysql:3306/portfolio
     username: root
-    password: 1234
+    password: ENC(8EbVdANLeEADdCA09nUaCw==)
     driver-class-name: com.mysql.cj.jdbc.Driver
